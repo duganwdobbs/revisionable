@@ -290,4 +290,8 @@ class Revision extends Eloquent
             return $value;
         }
     }
+
+    public function user(){
+        return $this->belongsTo($this->getActualClassNameForMorph($this->revisionable_type), 'user_id','id');
+    }
 }
