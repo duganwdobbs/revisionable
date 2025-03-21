@@ -292,6 +292,6 @@ class Revision extends Eloquent
     }
 
     public function user(){
-        return $this->belongsTo($this->getActualClassNameForMorph($this->revisionable_type), 'user_id','id');
+        return $this->belongsTo(app('config')->get('auth.model'), 'user_id','id');
     }
 }
